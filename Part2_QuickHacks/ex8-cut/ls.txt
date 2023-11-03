@@ -1,0 +1,6 @@
+drwxr-xr-x  5 dimsumpanda  staff  160 Sep 26 17:41 ex4
+drwxr-xr-x  9 dimsumpanda  staff  288 Sep 28 17:03 ex5
+drwxr-xr-x  6 dimsumpanda  staff  192 Oct 30 21:10 ex6
+drwxr-xr-x  6 dimsumpanda  staff  192 Oct 30 21:19 ex7
+drwxr-xr-x  3 dimsumpanda  staff   96 Oct 31 09:24 ex8-cut
+drwxr-xr-x  6 dimsumpanda  staff  192 Jul  4 17:07 venv

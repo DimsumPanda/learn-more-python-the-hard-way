@@ -1,0 +1,22 @@
+Exercise 9: sed
+Using these tiny projects to study yourself is useful, but let's pan out and look at the main topics you've focused on:
+
+Startup process for beginning work, such as your text editor, how well you can type, and other things that happen inside the computer.
+Mental attitude when you begin and while you work, with a suggestion for journaling as a way to get control over it.
+Work environment including your desk, lighting, chair, and the kind of computer you use.
+Physical posture and health to avoid injuries while you work.
+In this exercise we'll take this improvement plan and go one step further by tracking some metrics. You have been taking a small command line tool, reading about it and determining its features, and then spending only 45 minutes doing a quick hack. You can now enumerate your features, prioritize them, and then figure out how many you can complete in 45 minutes. In fact, you can go back through all the projects you've done so far and your notes on changes you've made and calculate this metric to see if you've been improving.
+
+Take the time now to go back through your notes and get a rough estimate of the percentage of features you completed for each 45 minute hack. Graph them on some paper, and then look at your notes to see if there were significant changes, good or bad, when you altered how you work. Then in this exercise try to make a prediction about how much you'll get done based on a change you'll make. You could even try adding some friction back to your process and see how that impacts your productivity.
+
+Warning
+
+Keep in mind that this is a personal metric and not something you should share with anyone else. These are barely even scientific and meant for you to simply gain some objectivity in analyzing how you work. They aren't meant to be grand metrics that can describe all programmers, but you better believe that if a manager finds out you have these they will demand to see them. They will then demand everyone on your team start doing them, and then management will use these to cause you a great deal of trouble. Consider your lab notes a very private journal, and never let anyone see it.
+
+Exercise Challenge
+This exercise will get more complicated than the others because we're going to be doing more regular expressions and implementing a tool called sed. The sed utility enables you to alter text by taking a regular expression replacement pattern and then determining what to replace it with in each line it receives. The difficulty may be in implementing sed's expression format, so I recommend you approach this in two ways:
+
+LEVEL OVER 9000 is having command line options for the most basic sed usage of replacing one string with another.
+LEVEL OVER 9000 is enabling regular expressions in those command line options.
+LEVEL OVER 9000 is implementing the sed expression format.
+An example of using sed is to change one word to another in a stream of text. If I wanted to change the output of ls so that my name is replaced by "author" I can do this:
