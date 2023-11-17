@@ -116,9 +116,11 @@ class SingleLinkedList(object):
 
     def first(self):
         """Returns a *reference* to the first item, does not remove."""
+        return self.begin.value
 
     def last(self):
         """Returns a reference to the last item, does not remove."""
+        return self.end.value
 
     def count(self):
         """Counts the number of elements in the list."""
@@ -131,13 +133,26 @@ class SingleLinkedList(object):
 
     def get(self, index):
         """Get the value at index."""
+        if self.begin == None:
+            return None
+        else:
+            node = self.begin
+            for i in range(0, index+1):
+                if i == index:
+                    return node.value
+                elif node.next:
+                    node = node.next
+                else:
+                    return None
 
     def dump(self, mark):
         """Debugging function that dumps the contents of the list."""
         node = self.begin
+        print(f"{mark}:")
         while node:
             print(node.value, end=" ")
             node = node.next
+        print("\n")
 
 ##########################################################################
 # The following commented out lines is exploratory testing of the 
