@@ -87,6 +87,32 @@ class SingleLinkedList(object):
 
     def remove(self, obj):
         """Finds a matching item and removes it from the list."""
+        index = 0
+        if self.begin == None:
+            pass
+        else:
+            current_node = self.begin
+            # Loop through the nodes and remove any nodes that match the value of the object.
+            while current_node:
+                # Remove the node if the value matches the object
+                if current_node.value == obj:
+                    # Check if the value matches the begin node, if it does, unshift the list
+                    if current_node == self.begin:
+                        self.unshift()
+                    # Check if the value matches the end node, if it does, pop the list
+                    elif current_node == self.end:
+                        self.pop()
+                    return index
+                # Check the next node and see if it matches.
+                if current_node.next == obj:
+                    if current_node.next.next:
+                        current_node.next = current_node.next.next
+                    else:
+                        current_node.next = None
+                    return index + 1
+                current_node = current_node.next
+                index += 1
+        return None
 
     def first(self):
         """Returns a *reference* to the first item, does not remove."""
@@ -108,6 +134,10 @@ class SingleLinkedList(object):
 
     def dump(self, mark):
         """Debugging function that dumps the contents of the list."""
+        node = self.begin
+        while node:
+            print(node.value, end=" ")
+            node = node.next
 
 ##########################################################################
 # The following commented out lines is exploratory testing of the 

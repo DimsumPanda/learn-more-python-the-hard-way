@@ -41,18 +41,18 @@ def test_shift():
     assert colors.pop() == "Carbazole Violet"
     assert colors.count() == 0
 
-# def test_remove():
-#     colors = SingleLinkedList()
-#     colors.push("Cobalt")
-#     colors.push("Zinc White")
-#     colors.push("Nickle Yellow")
-#     colors.push("Perinone")
-#     assert colors.remove("Cobalt") == 0
-#     colors.dump("before perinone")
-#     assert colors.remove("Perinone") == 2
-#     colors.dump("after perinone")
-#     assert colors.remove("Nickle Yellow") == 1
-#     assert colors.remove("Zinc White") == 0
+def test_remove():
+    colors = SingleLinkedList()
+    colors.push("Cobalt")
+    colors.push("Zinc White")
+    colors.push("Nickle Yellow")
+    colors.push("Perinone")
+    assert colors.remove("Cobalt") == 0
+    colors.dump("before perinone")
+    assert colors.remove("Perinone") == 2
+    colors.dump("after perinone")
+    assert colors.remove("Nickle Yellow") == 1
+    assert colors.remove("Zinc White") == 0
 
 # def test_first():
 #     colors = SingleLinkedList()
