@@ -5,7 +5,11 @@ class SingleLinkedListNode(object):
         self.next = nxt
 
     def __repr__(self):
-        nval = self.next and self.next.value or None
+        """This line checks if the node has a next node (self.next). 
+        If it does, it assigns the value of the next node to nval; 
+        otherwise, it assigns None."""
+        # nval = self.next and self.next.value or None
+        nval = self.next.value if self.next else None
         return f"[{self.value}:{repr(nval)}]"
 
 class SingleLinkedList(object):
