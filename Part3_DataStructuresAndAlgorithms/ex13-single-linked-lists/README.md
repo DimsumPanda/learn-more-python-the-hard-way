@@ -5,7 +5,7 @@ If you haven't already, install venv and the requirements (e.g. pytest).
 ```
 python3 -m venv venv
 . ./venv/bin/activate
-pip3 install -r requirements.txt
+pip3 install -r ../requirements.txt
 ```
 
 ## Run Tests
