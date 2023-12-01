@@ -47,6 +47,18 @@ class DoubleLinkedList(object):
 
     def shift(self, obj):
         """Actually just another name for push but from the beginning node."""
+        if self.begin == None:
+            self.begin = DoubleLinkedListNode(obj, None, None)
+            self.end = self.begin
+        elif self.begin == self.end:
+            node = DoubleLinkedListNode(obj, self.begin, None)
+            self.begin = node
+            self.end.prev = node
+        else:
+            node = DoubleLinkedListNode(obj, self.begin, None)
+            old_begin_node = self.begin
+            old_begin_node.prev = node
+            self.begin = node
     
     def unshift(self):
         """Removes the first item (from begin) and returns it."""
@@ -69,15 +81,45 @@ class DoubleLinkedList(object):
         """You'll need to use this operation sometimes, but mostly 
         inside remove(). It should take a node, and detach it from the 
         list, whether the node is at the front, end or in the middle."""
+        if node == self.begin:
+            self.unshift()
+        elif node == self.end:
+            self.pop()
+        elif node.prev and node.next:
+            # If it has a prev node and there's a node after this particular node
+            next_node = node.next
+            node.prev.next = next_node
+            next_node.prev = node.prev
+        else:
+            # do nothing if the node doesn't exist in the list
+            pass
 
     def remove(self, obj):
         """Finds a matching item and removes it from the list."""
+        node = self.begin
+        index = 0
+        while node:
+            if node.value == obj:
+                self.detach_node(node)
+                return index
+            else:
+                index += 1
+                node = node.next
+        return None
 
     def first(self):
         """Returns a *reference* to the first item, does not remove."""
-
+        if self.begin:
+            return self.begin.value
+        else:
+            return None
+        
     def last(self):
         """Returns a reference to the last item, does not remove."""
+        if self.end:
+            return self.end.value
+        else:
+            return None
 
     def count(self):
         """Counts the number of elements in the list."""
@@ -97,13 +139,21 @@ class DoubleLinkedList(object):
     def get(self, index):
         """Get the value at index."""
         node = self.begin
-        for i in range(0,index):
-            if node:
+        for i in range(0,index+1):
+            if i == index and node:
+                return node.value
+            elif node:
                 node = node.next
-        return node.value
+            else:
+                return None
 
     def dump(self, mark):
         """Debugging function that dumps the contents of the list."""
+        node = self.begin
+        print(mark)
+        while node:
+            print(f'{repr(node)}')
+            node = node.next
     
     def _invariant(self):
         if self.begin == None:

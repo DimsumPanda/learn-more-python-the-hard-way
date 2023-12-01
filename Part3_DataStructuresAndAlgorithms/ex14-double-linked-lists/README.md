@@ -37,13 +37,16 @@ You can also pass `-s` to pytest to print out the stdout, even for passing tests
 ================================================================= test session starts =================================================================
 platform darwin -- Python 3.11.2, pytest-7.4.3, pluggy-1.3.0
 rootdir: learn-more-python-the-hard-way/Part3_DataStructuresAndAlgorithms/ex14-double-linked-lists
-collected 8 items                                                                                                                                     
+collected 5 items                                                                                                                                     
 
-test_sllist.py ....before perinone:
-Zinc White Nickle Yellow Perinone 
-
-after perinone:
-Zinc White Nickle Yellow 
+test_dllist.py ....before perinone
+[Zinc White, 'Nickle Yellow', None]
+[Nickle Yellow, 'Perinone', 'Zinc White']
+[Perinone, None, 'Nickle Yellow']
+after perinone
+[Zinc White, 'Nickle Yellow', None]
+[Nickle Yellow, None, 'Zinc White']
+.
 ```
 Documentation on `pytest -s` can be found in the docs: https://docs.pytest.org/en/latest/how-to/capture-stdout-stderr.html
 ## Helpful Resources
