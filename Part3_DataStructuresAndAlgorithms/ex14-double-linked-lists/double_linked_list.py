@@ -63,20 +63,19 @@ class DoubleLinkedList(object):
     def unshift(self):
         """Removes the first item (from begin) and returns it."""
         # if there are no nodes
-        if self.begin == None:
-            return None
-        # if there is only one node
-        elif self.begin == self.end:
+        if self.begin:
             unshift_node_value = self.begin.value
-            self.begin = None
-            self.end = None
+            # if there is only one node
+            if self.begin == self.end:
+                self.begin = None
+                self.end = None
+            else:
+                self.begin = self.begin.next
+                self.begin.prev = None
             return unshift_node_value
         else:
-            unshift_node_value = self.begin.value
-            self.begin = self.begin.next
-            self.begin.prev = None
-            return unshift_node_value
-
+            return None
+    
     def detach_node(self, node):
         """You'll need to use this operation sometimes, but mostly 
         inside remove(). It should take a node, and detach it from the 
@@ -86,7 +85,9 @@ class DoubleLinkedList(object):
         elif node == self.end:
             self.pop()
         elif node.prev and node.next:
-            # If it has a prev node and there's a node after this particular node
+            # If it has a prev node and there's a node after this particular node,
+            # Skip over the current node by updating the prev and next of 
+            # surrounding nodes
             next_node = node.next
             node.prev.next = next_node
             next_node.prev = node.prev
@@ -109,31 +110,21 @@ class DoubleLinkedList(object):
 
     def first(self):
         """Returns a *reference* to the first item, does not remove."""
-        if self.begin:
-            return self.begin.value
-        else:
-            return None
+        return self.begin.value if self.begin else None
         
     def last(self):
         """Returns a reference to the last item, does not remove."""
-        if self.end:
-            return self.end.value
-        else:
-            return None
-
+        return self.end.value if self.end else None
+    
     def count(self):
         """Counts the number of elements in the list."""
         node = self.begin
         count = 0
-        if self.begin == None:
-            pass
-        elif self.begin == self.end:
-            count = 1
-        else:
-            count = 1
-            while node != self.end:
-                count += 1
-                node = node.next
+
+        while node:
+            count += 1
+            node = node.next
+
         return count
     
     def get(self, index):
