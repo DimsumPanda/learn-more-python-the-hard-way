@@ -1,4 +1,6 @@
 # Ex15: Stacks and Queues
+The wrapped subdirectory re-uses the single_linked_list and double_linked_list 
+modules from exercise 13 and 14.
 
 ## Prerequisites
 If you haven't already, install venv and the requirements (e.g. pytest).
