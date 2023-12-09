@@ -41,10 +41,23 @@ class Queue(object):
             return old_head.value
         else:
             return None
-        
+    
+    def drop(self):
+        """Node is removed from the tail of the line. Someone gets out of line."""
+        if self._tail:
+            old_tail = self._tail
+            if self._tail == self._head:
+                self.unshift()
+            else:
+                self._tail = self._tail.prev
+                self._tail.next = None
+            return old_tail.value
+        else:
+            return None
+
     def first(self):
         """Return the value of the first node in the Queue"""
-        return self._head.value
+        return self._head.value if self._head else None
     
     def last(self):
         """Return the last value in the Queue"""
@@ -58,7 +71,7 @@ class Queue(object):
             count += 1
             node = node.next
         return count
-    
+
     def dump(self, mark="---"):
         """Debugging print statements"""
         print(mark)

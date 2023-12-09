@@ -53,3 +53,16 @@ def test_last():
     assert line.last() == "Cat"
     line.unshift()
     assert line.last() == "Cat"
+
+def test_drop():
+    line = Queue()
+    line.push("Alice")
+    line.push("Bob")
+    line.push("Cat")
+    line.dump("\nBefore we drop Cat:")
+    assert line.drop() == "Cat"
+    line.dump("\nAfter we drop Cat, before we drop Bob:")
+    assert line.drop() == "Bob"
+    line.dump("\nAfter we drop Bob, before we drop Alice:")
+    assert line.drop() == "Alice"
+    line.dump("\nAfter we drop Alice:")

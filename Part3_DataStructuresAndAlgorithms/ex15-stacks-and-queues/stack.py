@@ -11,23 +11,18 @@ class StackNode(object):
 class Stack(object):
 
     def __init__(self):
+        # We're using ._top so it doesn't conflict with the top() command
         self._top = None
 
     def push(self, obj):
         """Pushes a new value to the top of the stack."""
-        node = StackNode(obj, self._top)
-        if self._top:
-            self._top = node
-            # Since this is a stack, the next node should be the book under top.
-        else:
-            self._top = node
+        self._top = StackNode(obj, self._top)
 
     def pop(self):
         """Pops the value that is currently on the top of the stack."""
         if self._top:
             old_top = self._top
-            new_top = self._top.next
-            self._top = new_top
+            self._top = self._top.next
             return old_top.value
         else:
             return None
