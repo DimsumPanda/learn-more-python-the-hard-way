@@ -124,7 +124,7 @@ class SingleLinkedList(object):
 
     def last(self):
         """Returns a reference to the last item, does not remove."""
-        return self.end.value
+        return self.end.value if self.end else None
 
     def count(self):
         """Counts the number of elements in the list."""
@@ -154,9 +154,8 @@ class SingleLinkedList(object):
         node = self.begin
         print(f"{mark}:")
         while node:
-            print(node.value, end=" ")
+            print(node)
             node = node.next
-        print("\n")
 
 ##########################################################################
 # The following commented out lines is exploratory testing of the 

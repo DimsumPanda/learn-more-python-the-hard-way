@@ -1,0 +1,53 @@
+from stack_wrapped import Stack
+
+def test_push():
+    books = Stack()
+    books.push("Falling Up")
+    assert books.top() == "Falling Up"
+    books.push("Where the Sidewalk Ends")
+    assert books.top() == "Where the Sidewalk Ends"
+    books.dump("\nAfter 2 books pushed to stack")
+
+def test_pop():
+    books = Stack()
+    books.push("Falling Up")
+    books.push("Where the Sidewalk Ends")
+    books.push("The Light in the Attic")
+    books.dump("\nBefore books are popped:")
+    assert books.top() == "The Light in the Attic"
+    assert books.pop() == "The Light in the Attic"
+    assert books.top() == "Where the Sidewalk Ends"
+    books.dump("\nAfter first book popped:")
+    assert books.pop() == "Where the Sidewalk Ends"
+    books.dump("\nAfter second book popped:")
+    assert books.top() == "Falling Up"
+    assert books.pop() == "Falling Up"
+    books.dump("\nAfter last book popped:")
+    assert books.top() == None
+
+def test_top():
+    books = Stack()
+    assert books.top() == None
+    books.push("Falling Up")
+    assert books.top() == "Falling Up"
+    books.push("Where the Sidewalk Ends")
+    assert books.top() == "Where the Sidewalk Ends"
+
+def test_count():
+    books = Stack()
+    assert books.count() == 0
+    books.push("Falling Up")
+    assert books.count() == 1 
+    assert books.top() == "Falling Up"
+    books.push("Where the Sidewalk Ends")
+    assert books.count() == 2
+    assert books.top() == "Where the Sidewalk Ends"
+    books.push("The Light in the Attic")
+    assert books.count() == 3
+    books.dump("\nAfter 3 Books pushed:")
+    books.pop()
+    assert books.count() == 2
+    books.pop()
+    assert books.count() == 1
+    books.pop()
+    assert books.count() == 0

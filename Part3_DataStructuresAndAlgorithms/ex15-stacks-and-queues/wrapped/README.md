@@ -1,0 +1,1 @@
+Here I'm trying to call the other function with my class.
