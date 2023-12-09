@@ -1,7 +1,7 @@
 import sys, os
 from pathlib import Path
 
-# Add ex13 to current system path
+# Add ex14 to current system path
 sys.path.insert(0, 'os.path.dirname')
 part3_dir = Path(__file__).parents[2]
 sys.path.append(os.path.join(part3_dir, 'ex14-double-linked-lists'))
