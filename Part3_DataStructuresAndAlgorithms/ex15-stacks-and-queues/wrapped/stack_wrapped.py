@@ -1,10 +1,11 @@
-import sys, os
+import sys
 from pathlib import Path
 
+HERE = Path(__file__).parent
+EX13_PATH = HERE.parents[1].joinpath('ex13-single-linked-lists')
+
 # Add ex13 to current system path
-sys.path.insert(0, 'os.path.dirname')
-part3_dir = Path(__file__).parents[2]
-sys.path.append(os.path.join(part3_dir, 'ex13-single-linked-lists'))
+sys.path.append(str(EX13_PATH))
 
 from single_linked_list import SingleLinkedList
 
