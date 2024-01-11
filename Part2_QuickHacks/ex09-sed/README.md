@@ -2,6 +2,8 @@
 Replaces a regex with a word using the `-r` flag.
 ```
 %  python3 sed.py -f original.txt -o modified.txt -a "Level \w" -r "LEVEL OVER 9000"
+
+% sed -e "s/Level [0-9]/LEVEL OVER 9000/g" original.txt > new.txt
 ```
 ## Original
 ```
