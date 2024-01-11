@@ -1,7 +1,6 @@
 # Use plain old sys.argv
 import sys
 import getopt
-import os
 import glob
 
 argv = sys.argv[1:]

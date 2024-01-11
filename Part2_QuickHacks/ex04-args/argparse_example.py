@@ -1,5 +1,4 @@
 import argparse
-import glob
 import os
 
 parser = argparse.ArgumentParser(description='This program uses argparse.py')
@@ -21,13 +20,13 @@ if args.enable_metrics:
 if args.enable_health:
     print("Health check enabled")
 if args.first_name:
-    print(f"First Name = {args.first_name}")
+    print(f"First Name: {args.first_name}")
 if args.last_name:
     print(f"Last Name: {args.last_name}")
 # When there is no long-form flag, you can use the letter for the flag.
 if args.p:
     print(f"Port: {args.p}")
 if args.file_path:
-    with os.scandir(args.file_path) as entries:
-        for entry in entries:
-            print(entry.name)
+    with os.scandir(args.file_path) as files:
+        for file in files:
+            print(file.name)
