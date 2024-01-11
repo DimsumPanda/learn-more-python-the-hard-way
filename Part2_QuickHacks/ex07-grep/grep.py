@@ -2,11 +2,13 @@ import argparse
 import re
 import glob
 
-parser = argparse.ArgumentParser(description='file pattern searcher')
+parser = argparse.ArgumentParser(description='given input files, selecting lines \
+            that match one or more patterns.')
 parser.add_argument('pattern', help='pattern to match')
 parser.add_argument('file', help='file or regex for files to search for')
 
 def print_matching_content(regexpattern, filepattern):
+    # Creates a list of files that match the given pattern.
     files_list = glob.glob(filepattern, recursive=True)
 
     patternRegex = re.compile(regexpattern)

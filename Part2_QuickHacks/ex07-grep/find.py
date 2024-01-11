@@ -2,6 +2,7 @@ import argparse
 import os
 import subprocess
 import glob
+# add grep module
 import grep
 
 parser = argparse.ArgumentParser(description='walk a file hierarchy')
@@ -9,6 +10,7 @@ parser.add_argument('-n', '--name', help='True if the last component of the path
 parser.add_argument('-p', '--print', action='store_true', help='This primary always evaluates to true. It prints the pathname of the current file to standard output. If none of -exec, -ls, -print, -print0, or -ok is specified, the given expression shall be effectively replaced by (given expression) -print.')
 parser.add_argument('-t', '--type', help='True if the file is of the specified type. Possible file types: \n d  directory')
 parser.add_argument('--exec', help='True if the argument returns a zero value as its exit status.')
+# add grep optional argument
 parser.add_argument('--grep', help="print lines that match the grep pattern")
 parser.add_argument('dirpath', help='directory path to search in')
 
@@ -33,5 +35,6 @@ if __name__ == "__main__":
                 print(full_file_path)
             if args.exec:
                 subprocess.run([args.exec, full_file_path], shell=True, check=True)
+            # if the grep flag is not empty.
             if args.grep:
                 grep.print_matching_content(args.grep, full_file_path)
