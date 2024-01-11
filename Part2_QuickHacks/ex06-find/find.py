@@ -25,4 +25,4 @@ if __name__ == "__main__":
             if args.print:
                 print(full_file_path)
             if args.exec:
-                subprocess.run([args.exec, full_file_path], shell=True, check=True)
+                subprocess.run([f"{args.exec} {full_file_path}"], shell=True, check=True)

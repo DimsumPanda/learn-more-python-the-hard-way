@@ -3,25 +3,25 @@
 
 
 ```
-(venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % find ../ex5 -name "*.txt" -print 
-../ex5/combined.txt
-../ex5/c.txt
-../ex5/b.txt
-../ex5/a.txt
-../ex5/d.txt
+(venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % find ../ex05-cat -name "*.txt" -print 
+../ex05-cat/combined.txt
+../ex05-cat/c.txt
+../ex05-cat/b.txt
+../ex05-cat/a.txt
+../ex05-cat/d.txt
 
-(venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % python3 find.py ../ex5 -n "*.txt" -p
-../ex5/combined.txt
-../ex5/c.txt
-../ex5/b.txt
-../ex5/a.txt
-../ex5/d.txt
+(venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % python3 find.py ../ex05-cat -n "*.txt" -p
+../ex05-cat/combined.txt
+../ex05-cat/c.txt
+../ex05-cat/b.txt
+../ex05-cat/a.txt
+../ex05-cat/d.txt
 
-(venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % python3 find.py ../ex5 -n "*.txt" --print
-../ex5/combined.txt
-../ex5/c.txt
-../ex5/b.txt
-../ex5/a.txt
+(venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % python3 find.py ../ex05-cat -n "*.txt" --print
+../ex05-cat/combined.txt
+../ex05-cat/c.txt
+../ex05-cat/b.txt
+../ex05-cat/a.txt
 
 (venv) dimsumpanda@dimsumpandas-MacBook-Pro ex6 % find .. -name "*.txt" -print                
 ../venv/lib/python3.11/site-packages/pip/_vendor/vendor.txt
@@ -30,17 +30,17 @@
 ../venv/lib/python3.11/site-packages/pip-22.3.1.dist-info/entry_points.txt
 ../venv/lib/python3.11/site-packages/pip-22.3.1.dist-info/top_level.txt
 ../venv/lib/python3.11/site-packages/pip-22.3.1.dist-info/LICENSE.txt
-../ex5/combined.txt
-../ex5/c.txt
-../ex5/b.txt
-../ex5/a.txt
-../ex5/d.txt
+../ex05-cat/combined.txt
+../ex05-cat/c.txt
+../ex05-cat/b.txt
+../ex05-cat/a.txt
+../ex05-cat/d.txt
 
-dimsumpanda@dimsumpandas-MacBook-Pro ex6 % python3 find.py . -n "*.md" --exec "ls" 
-README.md       __pycache__     example.py      find.py
+dimsumpanda@dimsumpandas-MacBook-Pro ex6 % python3 find.py . -n "*.txt" --exec "ls -l"   
+-rw-r--r--  1 dimsumpanda  staff  0 Nov  1 10:24 ./a.txt
 ```
 ## example.py
-Sameple python file from geeksforgeeks example on how to print all files within a directory.
+Sample python file from geeksforgeeks example on how to print all files within a directory.
 https://www.geeksforgeeks.org/how-to-print-all-files-within-a-directory-using-python/#
 os.startfile() only works on Windows Operating system though.
 
