@@ -1,14 +1,3 @@
-import sys
-from pathlib import Path
-
-HERE = Path(__file__).parent
-EX14_PATH = HERE.parent.joinpath('ex14-double-linked-lists')
-
-# Add ex14 to current system path
-sys.path.append(str(EX14_PATH))
-
-from double_linked_list import DoubleLinkedList
-
 def bubble_sort(numbers):
     """Sorts a list of numbers using bubble sort."""
     while True:
@@ -129,9 +118,3 @@ def partition(array, low, high):
     print(f"New Pivot Value: i= {i} i_node.value={i_node.value}, pivot.value={pivot.value}")
 
     return i
-        
-
-
-
-
-    

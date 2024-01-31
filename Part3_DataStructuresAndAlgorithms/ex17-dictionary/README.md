@@ -1,4 +1,4 @@
-# Ex16: Dictionary
+# Ex17: Dictionary
 
 The script leverages the DoubleLinkedList() class from `../ex14-double-linked-lists`.
 `dictionary.py` is a rough implementation of a dictionary using double linked lists.
