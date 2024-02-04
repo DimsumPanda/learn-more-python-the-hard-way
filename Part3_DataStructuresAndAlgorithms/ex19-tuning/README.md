@@ -1,8 +1,6 @@
-# Ex18: Measuring Performance
+# Ex19: Tuning
+Leverages code found in: https://github.com/zedshaw/learn-more-python-the-hard-way-solutions/tree/master/ex19_tuning
 
-The script leverages the DoubleLinkedList() class from `../ex14-double-linked-lists`
-and a copy of the sorting script from `../ex16-bubble-quick-merge-sort`. Changes
-are made to `test_sorting.py` to check performance.
 
 ## Prerequisites
 If you haven't already, install venv and the requirements (e.g. pytest).
@@ -14,29 +12,26 @@ pip3 install -r ../requirements.txt
 
 ## Run Tests
 
+Performance is faster than in ex18
 ```
-# the headings were added in later manually for this README
 % python3 -m cProfile -s cumtime test_sorting.py | grep sorting.py
-
-ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000    0.147    0.147 test_sorting.py:1(<module>)
-        1    0.000    0.000    0.122    0.122 test_sorting.py:20(test_bubble_sort)
-        1    0.118    0.118    0.118    0.118 sorting.py:1(bubble_sort)
-        1    0.000    0.000    0.011    0.011 test_sorting.py:27(test_merge_sort)
-        1    0.000    0.000    0.007    0.007 sorting.py:24(merge_sort)
-   1599/1    0.002    0.000    0.007    0.007 sorting.py:32(merge_node)
-        2    0.001    0.000    0.007    0.003 test_sorting.py:2(random_list)
- 7536/799    0.005    0.000    0.005    0.000 sorting.py:60(merge)
-      800    0.001    0.000    0.001    0.000 sorting.py:15(count)
+        1    0.000    0.000    0.131    0.131 test_sorting.py:1(<module>)
+        1    0.000    0.000    0.112    0.112 test_sorting.py:20(test_bubble_sort)
+        1    0.107    0.107    0.107    0.107 sorting.py:1(bubble_sort)
+        3    0.001    0.000    0.011    0.004 test_sorting.py:2(random_list)
+        1    0.000    0.000    0.009    0.009 test_sorting.py:27(test_merge_sort)
+        1    0.000    0.000    0.006    0.006 sorting.py:24(merge_sort)
+        1    0.000    0.000    0.006    0.006 test_sorting.py:36(test_quick_sort)
+   1599/1    0.001    0.000    0.006    0.006 sorting.py:32(merge_node)
+ 7536/799    0.004    0.000    0.004    0.000 sorting.py:60(merge)
+        1    0.000    0.000    0.003    0.003 sorting.py:77(quick_sort)
+   1063/1    0.000    0.000    0.003    0.003 sorting.py:81(quick_sort_doit)
+      531    0.002    0.000    0.002    0.000 sorting.py:91(quick_sort_partition)
+      799    0.001    0.000    0.001    0.000 sorting.py:15(count)
         3    0.000    0.000    0.000    0.000 test_sorting.py:9(is_sorted)
-        1    0.000    0.000    0.000    0.000 test_sorting.py:36(test_quick_sort)
-        1    0.000    0.000    0.000    0.000 sorting.py:77(quick_sort)
-     13/1    0.000    0.000    0.000    0.000 sorting.py:81(quick_sort_list)
-        6    0.000    0.000    0.000    0.000 sorting.py:88(partition)
         1    0.000    0.000    0.000    0.000 sorting.py:1(<module>)
-
-
 ```
+
 
 
 You can either run `pytest` which will run run all files of the form test_*.py or *_test.py in the current directory and its subdirectories. More generally, it follows standard [test discovery rules](https://docs.pytest.org/en/7.4.x/explanation/goodpractices.html#test-discovery).
@@ -81,6 +76,6 @@ Documentation on `pytest -s` can be found in the docs: https://docs.pytest.org/e
 ## Helpful Resources
 Some relevant resources for completing Exercise 17: Dictionary:
 - pytest - https://docs.pytest.org/en/7.4.x/
-- Author's rough solution (not a full solution to get you started): https://github.com/zedshaw/learn-more-python-the-hard-way-solutions/tree/master/ex17_dictionary
+- Author's rough solution (not a full solution to get you started): https://github.com/zedshaw/learn-more-python-the-hard-way-solutions/tree/master/ex19_tuning
 - [Python Classes Documentation](https://docs.python.org/3/tutorial/classes.html)
 - [RealPython article on Writing Test](https://realpython.com/python-testing/#writing-your-first-test)
