@@ -7,14 +7,6 @@ class BSTreeNode(object):
         self.parent = parent
         self.value = value
 
-    # find the minimum value in a branch
-    def find_minimum(node):
-        while node:
-            if node.left:
-                node = node.left
-            else:
-                return node
-        return None
 
     def __repr__(self):
         leftVal = self.left.value if self.left else None
@@ -56,7 +48,15 @@ class BSTree(object):
             else:
                 node.value = value
 
-
+    # find the minimum value in a branch
+    def find_minimum(node):
+        while node:
+            if node.left:
+                node = node.left
+            else:
+                return node
+        return None
+    
     def replace_node_in_parent(self, node):
         # set the successor
         successor = self.find_minimum(node.right)
